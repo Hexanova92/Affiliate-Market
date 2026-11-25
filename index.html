@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dealora — Handpicked Tech Deals</title>
+  <meta name="description" content="Discover handpicked deals on laptops, keyboards, mice, desk accessories and more. Compare prices, swipe through product galleries and find your next upgrade.">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dealora — Handpicked Tech Deals">
+  <meta property="og:description" content="Discover handpicked tech deals with easy image galleries and direct product links.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#products">Skip to products</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Dealora home">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-name">Dealora</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#products">All Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+
+      <a class="header-cta" href="#products">Explore deals</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> Handpicked tech deals</span>
+          <h1 id="heroTitle">Smarter buys.<br><span>Better prices.</span></h1>
+          <p class="hero-text">Explore a curated collection of everyday tech upgrades. Compare offers, browse every angle, and shop through direct product links.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">
+              Shop the deals
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-ghost" href="#categories">Browse categories</a>
+          </div>
+          <div class="hero-proof">
+            <div class="proof-item"><strong id="dealCount">5</strong><span>Curated deals</span></div>
+            <div class="proof-divider" aria-hidden="true"></div>
+            <div class="proof-item"><strong id="imageCount">0</strong><span>Product angles</span></div>
+            <div class="proof-divider" aria-hidden="true"></div>
+            <div class="proof-item"><strong>100%</strong><span>Direct links</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card visual-card-main">
+            <img src="image/laptop/image_1.webp" alt="" loading="eager" decoding="async">
+            <div class="visual-card-info">
+              <span class="visual-label">Top pick</span>
+              <strong>Gaming laptop</strong>
+              <span class="visual-line"></span>
+            </div>
+          </div>
+          <div class="visual-card visual-card-small">
+            <img src="image/mouse/image_1.webp" alt="" loading="lazy" decoding="async">
+            <span>Silent mouse</span>
+          </div>
+          <div class="visual-badge">
+            <span>Save up to</span>
+            <strong id="maxDiscount">0%</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="products" aria-labelledby="productsTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Curated collection</span>
+            <h2 id="productsTitle">Deals worth clicking</h2>
+            <p>Find the right upgrade, compare the offer, then follow the direct link to shop.</p>
+          </div>
+          <p class="result-pill"><span id="resultCount">0</span> products found</p>
+        </div>
+
+        <div class="toolbar" id="categories">
+          <label class="search-field" for="searchInput">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span class="sr-only">Search products by name</span>
+            <input id="searchInput" type="search" placeholder="Search products by name..." autocomplete="off">
+          </label>
+          <div class="category-filters" id="categoryFilters" role="group" aria-label="Filter products by category"></div>
+        </div>
+
+        <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span class="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/></svg>
+          </span>
+          <h3>No products found</h3>
+          <p>Try a different search term or choose another category.</p>
+          <button class="button button-primary" id="resetFilters" type="button">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <span class="section-kicker">Stay in the loop</span>
+            <h2 id="contactTitle">Found a deal we should feature?</h2>
+            <p>Send us the product and we will review it for the next collection update.</p>
+          </div>
+          <a class="button button-light" href="mailto:hello@example.com?subject=Deal%20submission">
+            Send a deal
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#home" aria-label="Dealora home">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-name">Dealora</span>
+      </a>
+      <p>Smart picks. Clear prices. Better buys.</p>
+      <nav aria-label="Footer navigation">
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <small>&copy; 2026 Dealora. All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
